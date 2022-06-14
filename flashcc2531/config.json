@@ -12,6 +12,7 @@
   "devices": ["/dev/mem:rw", "/dev/gpiomem:rw"],
   "privileged": ["SYS_RAWIO"],
   "gpio": "true",
+  "init": false,
   "apparmor": "true",
   "ports": {
   },
