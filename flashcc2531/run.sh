@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Start Router Firmware Flash
+echo "Start Router Firmware Flash"
 cd /flash_cc2531
 if ! ./cc_chipid | grep "ID = b524"; then echo "ChipID not found." && exit 1; fi
 
