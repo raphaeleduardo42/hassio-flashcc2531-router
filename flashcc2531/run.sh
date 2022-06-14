@@ -1,13 +1,13 @@
 #!/bin/bash
-echo "Startet"
+echo "Start Router Firmware Flash
 cd /flash_cc2531
 if ! ./cc_chipid | grep "ID = b524"; then echo "ChipID not found." && exit 1; fi
 
 echo "Downloading firmware"
-if ! wget https://github.com/Koenkk/Z-Stack-firmware/raw/master/coordinator/Z-Stack_Home_1.2/bin/default/CC2531_DEFAULT_20201127.zip; then echo "firmware not found" && exit 1; fi
+if ! wget https://github.com/Koenkk/Z-Stack-firmware/raw/master/router/Z-Stack_Home_1.2/bin/CC2531_router_2020_09_29.zip; then echo "firmware not found" && exit 1; fi
 
 echo "unziping"
-if ! 7z x CC2531_DEFAULT_20201127.zip; then echo "unzip failed" && exit 1; fi
+if ! 7z x CC2531_router_2020_09_29.zip; then echo "unzip failed" && exit 1; fi
 
 echo "backup firmware"
 ./cc_read save.hex
@@ -17,6 +17,6 @@ echo "erase"
 ./cc_erase
 
 echo "flash firmware"
-./cc_write CC2531ZNP-Prod.hex
+./cc_write router-cc2531-std.hex
 
 echo "Finished"
