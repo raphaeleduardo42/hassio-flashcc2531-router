@@ -17,6 +17,6 @@ echo "erase"
 ./cc_erase
 
 echo "flash firmware"
-./cc_write router-cc2531-std.hex
+./cc_write router-cc2531-diag.hex
 
 echo "Finished"
